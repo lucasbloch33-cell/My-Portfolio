@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lucas Bloch — Portfolio</title>
+    <style>
+        :root { --accent:#0b6efd; --bg:#f7f9fc; --card:#ffffff; --muted:#6b7280; }
+        *{box-sizing:border-box}
+        body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#0f172a; line-height:1.5}
+        header{background:var(--card); padding:18px 24px; box-shadow:0 1px 4px rgba(16,24,40,.06); position:sticky; top:0; z-index:20}
+        .container{max-width:1000px; margin:0 auto}
+        .nav{display:flex; align-items:center; justify-content:space-between}
+        .brand{font-weight:700; font-size:1.125rem}
+        nav a{margin-left:18px; text-decoration:none; color:var(--muted); font-weight:600}
+        nav a:hover{color:var(--accent)}
+        /* Hero */
+        .hero{display:flex; align-items:center; justify-content:center; padding:80px 24px; min-height:48vh}
+        .hero .content{max-width:820px; text-align:center}
+        .hero h1{font-size:2.25rem; margin:0 0 12px}
+        .hero p{color:var(--muted); margin:0 0 18px}
+        .btn{display:inline-block; background:var(--accent); color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:700}
+        /* Sections */
+        section{background:transparent; padding:48px 24px}
+        .card{background:var(--card); padding:20px; border-radius:12px; box-shadow:0 6px 18px rgba(11,20,40,.05)}
+        h2{margin:0 0 12px}
+        /* Skills */
+        .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px}
+        .skill{background:#f1f5f9; padding:12px; border-radius:8px; text-align:center; font-weight:600; color:#0f172a}
+        .skill small{display:block; color:var(--muted); font-weight:500; margin-top:6px}
+        footer{padding:20px 24px; text-align:center; color:var(--muted)}
+        @media(min-width:768px){ .hero h1{font-size:3rem} }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <div class="brand">Lucas Bloch</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container content">
+                <h1>Welcome — I build data-driven solutions</h1>
+                <p>Hi, I'm Luca. I work with data to uncover insights, build models, and create visualizations that help teams make decisions.</p>
+                <a class="btn" href="#about">Learn more</a>
+            </div>
+        </section>
+
+        <!-- About Me -->
+        <section id="about">
+            <div class="container card">
+                <h2>About Me</h2>
+                <p>I'm a data scientist focused on practical machine learning and analytics. I enjoy cleaning and transforming data, building models, and presenting results through clear visualizations. I have experience working with Python, SQL, and cloud platforms to deploy reproducible data workflows.</p>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="card skill">
+                        Python
+                        <small>Pandas · NumPy · scikit-learn</small>
+                    </div>
+                    <div class="card skill">
+                        Machine Learning
+                        <small>Supervised &amp; Unsupervised · Model evaluation</small>
+                    </div>
+                    <div class="card skill">
+                        Deep Learning
+                        <small>TensorFlow · PyTorch basics</small>
+                    </div>
+                    <div class="card skill">
+                        Data Visualization
+                        <small>Matplotlib · Seaborn · Plotly</small>
+                    </div>
+                    <div class="card skill">
+                        Statistics &amp; Math
+                        <small>Hypothesis testing · Probability · Regression</small>
+                    </div>
+                    <div class="card skill">
+                        Data Engineering
+                        <small>SQL · ETL · Airflow basics</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume -->
+        <section id="resume">
+            <div class="container card">
+                <h2>Resume</h2>
+                <p><a class="btn" href="resume.pdf" download="Lucas_Bloch_Resume.pdf">Download my resume (PDF)</a></p>
+                <object data="resume.pdf" type="application/pdf" width="100%" height="700">
+                    <p>Your browser doesn't support embedded PDFs. <a href="resume.pdf">Download the resume</a>.</p>
+                </object>
+            </div>
+        </section>
+
+        <!-- Contact (simple anchor target) -->
+        <section id="contact">
+            <div class="container card">
+                <h2>Contact</h2>
+                <p>If you'd like to collaborate or see my projects, feel free to reach out via email: <a href="mailto:lucas.bloch33@gmail.com">lucas.bloch33@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">© <span id="year"></span> Lucas Bloch — Data Science Portfolio</div>
+    </footer>
+
+    <script>
+        // Small helper to update the year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
